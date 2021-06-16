@@ -18,13 +18,13 @@ const Task = ({todo}) => {
             {todo.task} </h5> }
             </div>
             <button className='button'  onClick={()=> dispatch(ToggleTodo(todo.id))}>
-                {todo.completed? <i class="fas fa-check-double"></i> : <i class="fas fa-times"></i>}</button>
+                {todo.completed? <i class="fas fa-check-double"></i> : <i class="fas fa-times"></i>} Edit</button>
             <button className='button' onClick={()=>{dispatch(EditTodo({...todo,task:todoTask}))
                 setIsEdited(!isEdited)
                 setTodoTask(todo.task)
                 }}>
-                {isEdited? 'Update' : <i class="fas fa-edit"></i>} </button>
-            <button className='button'><i class="fas fa-trash-alt" onClick={()=> dispatch(RemoveTodo(todo.id))}></i></button>
+                Update </button>
+            <button className='button'><i class="fas fa-trash-alt" onClick={()=> dispatch(RemoveTodo(todo.id))}> Delete </i></button>
             
         
         </div>
